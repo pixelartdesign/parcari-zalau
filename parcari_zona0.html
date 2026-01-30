@@ -1,58 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="ro">
 <head>
-    <title>Parcări Zalău – Toate zonele</title>
     <meta charset="utf-8" />
+    <title>Parcări Zalău – Toate zonele</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <style>
-        #map { height: 600px; width: 100%; }
-    </style>
 </head>
+
 <body>
-<h2>Parcări Zalău – Toate zonele</h2>
-<div id="map"></div>
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script>
-var map = L.map('map').setView([47.1850, 23.0490], 16);
+<h2>Parcări Zalău – Google Maps</h2>
+<iframe
+    id="google-map"
+    src="https://www.google.com/maps/d/u/0/embed?mid=131cenGqMqB2Ud0Jr09BT_VPZvEUNbeo&ehbc=2E312F&noprof=1"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+</iframe>
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors',
-    maxZoom: 19
-}).addTo(map);
-
-// Marker icons per zone
-var blueIcon = L.icon({iconUrl: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png', iconSize: [32,32]});
-var greenIcon = L.icon({iconUrl: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png', iconSize: [32,32]});
-
-// Date parcări – exemplu Zona 0 și Zona 1
-var zone0 = [
-    {name: "Parcare Primarie", lat: 47.177593459298855, lon: 23.05435101241933, nr: 22},
-    {name: "B-dul Mihai Viteazul – Galeriile Meseș", lat: 47.1845, lon: 23.0512, nr: 24}
-];
-var zone1 = [
-    {name: "Parcare Zona 1 – Exemplu", lat: 47.1860, lon: 23.0520, nr: 50}
-];
-
-var priceZone0 = "Tichete parcare:</br> 30 min 2,50 Lei; </br> 1 ora 5 Lei;</br>1 zi 30 Lei (TVA inclus); </br>Abonament lunar 40 Lei; </br>Abonament anual 280 Lei; </br>SMS: 1h 1 Euro, 2h 2 Euro, 1 zi 6 Euro; </br>Card bancar: 30 min 2,50 Lei, 1h 5 Lei, 1 zi 30 Lei";
-var paymentZone0 = "SMS, Card";
-
-var priceZone1 = "Tichete parcare: 30 min 1,50 Lei; 1 ora 3 Lei; 1 zi 18 Lei (TVA inclus); Abonament lunar 120 Lei; Abonament anual 840 Lei; SMS: 1h 0,60 Euro, 2h 1,20 Euro, 1 zi 3,60 Euro; Card bancar: 30 min 1,50 Lei, 1h 3 Lei, 1 zi 18 Lei";
-var paymentZone1 = "SMS, Card";
-
-// Functie pentru adaugare marker-e cu icon per zona
-function addMarkers(data, icon, price, payment){
-    data.forEach(function(p){
-        var marker = L.marker([p.lat, p.lon], {icon: icon}).addTo(map);
-        var popupContent = `<b>${p.name}</b><br>Nr. locuri: ${p.nr}<br>${price}<br>Plată: ${payment}`;
-        marker.bindPopup(popupContent);
-    });
-}
-
-addMarkers(zone0, blueIcon, priceZone0, paymentZone0);
-addMarkers(zone1, greenIcon, priceZone1, paymentZone1);
-
-</script>
-<iframe src="https://www.google.com/maps/d/u/0/embed?mid=131cenGqMqB2Ud0Jr09BT_VPZvEUNbeo&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
 </body>
 </html>
