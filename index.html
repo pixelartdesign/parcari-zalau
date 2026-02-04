@@ -4,19 +4,30 @@
     <meta charset="utf-8" />
     <title>Parcări Zalău – Toate zonele</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100vw;
+            height: 100vh;
+            border: 0;
+        }
+    </style>
 </head>
 
 <body>
-<h2>Parcări Zalău – Google Maps</h2>
-<iframe
-    id="google-map"
-    src="https://www.google.com/maps/d/u/0/embed?mid=131cenGqMqB2Ud0Jr09BT_VPZvEUNbeo&ehbc=2E312F&noprof=1"
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-        style="width: 100vw; height: 500px; border: 0;">
-</iframe>
-
+    <iframe
+        id="google-map"
+        src="https://www.google.com/maps/d/u/0/embed?mid=131cenGqMqB2Ud0Jr09BT_VPZvEUNbeo&ehbc=2E312F&noprof=1"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
 </body>
 </html>
-
-
